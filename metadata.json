@@ -1,0 +1,6 @@
+{
+  "name": "Healify Naturals",
+  "description": "100% Pure, Organic & Natural Health Wellness Essentials — Raw Forest Honey, Cold-Pressed Oils, Herbal Infusions, Superfoods & Ayurvedic Care delivered across Bangladesh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

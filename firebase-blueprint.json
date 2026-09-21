@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile information for authenticated customers and administrators",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "phone": { "type": "string" },
+        "role": { "type": "string", "enum": ["customer", "admin"] }
+      },
+      "required": ["uid", "email"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Real-time support and consultation chat messages",
+      "type": "object",
+      "properties": {
+        "sender": { "type": "string", "enum": ["user", "support"] },
+        "senderName": { "type": "string" },
+        "text": { "type": "string" },
+        "phone": { "type": "string" },
+        "productContext": { "type": "string" }
+      },
+      "required": ["sender", "senderName", "text"]
+    },
+    "OrderInquiry": {
+      "title": "OrderInquiry",
+      "description": "Customer order placed or inquired via website / WhatsApp",
+      "type": "object",
+      "properties": {
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "customerAddress": { "type": "string" },
+        "productName": { "type": "string" },
+        "quantity": { "type": "number" },
+        "grandTotal": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "dispatched", "cancelled"] }
+      },
+      "required": ["customerName", "customerPhone", "productName", "quantity", "grandTotal"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Natural and Ayurvedic health product catalog item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "banglaName": { "type": "string" },
+        "category": { "type": "string" },
+        "price": { "type": "number" },
+        "priceBangla": { "type": "string" },
+        "image": { "type": "string" }
+      },
+      "required": ["id", "name", "price"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile data stored by authentication ID"
+    },
+    "/chat_messages/{messageId}": {
+      "schema": "ChatMessage",
+      "description": "Support chat messages collection"
+    },
+    "/order_inquiries/{orderId}": {
+      "schema": "OrderInquiry",
+      "description": "Customer order inquiries"
+    },
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Health products catalog strictly editable only by administrators"
+    }
+  }
+}

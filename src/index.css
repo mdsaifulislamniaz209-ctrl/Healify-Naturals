@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Bricolage Grotesque', 'Noto Sans Bengali', system-ui, sans-serif;
+  --font-body: 'Hanken Grotesk', 'Noto Sans Bengali', system-ui, sans-serif;
+
+  --color-surface: #f9f9f9;
+  --color-surface-dim: #dadada;
+  --color-surface-bright: #f9f9f9;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f3f3;
+  --color-surface-container: #eeeeee;
+  --color-surface-container-high: #e8e8e8;
+  --color-surface-container-highest: #e2e2e2;
+  --color-on-surface: #1a1c1c;
+  --color-on-surface-variant: #3c4a3d;
+  --color-inverse-surface: #2f3131;
+  --color-inverse-on-surface: #f0f1f1;
+  --color-primary: #006d2f;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #25d366;
+  --color-on-primary-container: #005523;
+  --color-secondary: #565e74;
+  --color-secondary-container: #dae2fd;
+  --color-on-secondary-container: #5c647a;
+  --color-tertiary: #6b5d38;
+  --color-tertiary-fixed: #f4e1b2;
+  --color-on-tertiary-fixed: #241a00;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Material symbols outlined helper */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
