@@ -1,6 +1,4 @@
-<>yml
 name: Deploy Vite site to Pages
-
 on:
   push:
     branches:
@@ -40,4 +38,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        </>yml
+        
