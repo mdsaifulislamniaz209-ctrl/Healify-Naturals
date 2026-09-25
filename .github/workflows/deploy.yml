@@ -1,1 +1,4 @@
-name Deploy Vite site to Pages, on push branches main, permissions, jobs build steps
+name Deploy Vite site to Pages,
+on push branches main,
+permissions,
+jobs build steps
